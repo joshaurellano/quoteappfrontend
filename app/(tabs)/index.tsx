@@ -35,12 +35,14 @@ useEffect (() =>{
       <Card containerStyle={styles.card}>
         
         <View style={styles.quote}>
-        <Text h4 >{quotesData?.[0]?.content}</Text>
+        <Text h4 style={{fontFamily: "OpenSans",fontWeight:'600'}}>{quotesData?.[0]?.content}</Text>
         </View>
 
         <View style={styles.author}>
-        <Text>- {quotesData?.[0]?.author}</Text>
+        <Text style={{fontFamily: "OpenSans",fontWeight:'400'}}>- {quotesData?.[0]?.author}</Text>
         </View>
+
+        
       </Card>
     </View>
   );
@@ -55,12 +57,13 @@ const styles = StyleSheet.create({
     height: 250,
     flex:1,
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
+    borderRadius: 15
   },
   quote: {
     flex:1,
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
   },
   author: {
     flex:1,
