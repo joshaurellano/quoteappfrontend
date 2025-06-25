@@ -1,7 +1,7 @@
 import { Card, Text } from '@rneui/themed';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { StyleSheet, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 
 const apiUrl = process.env.EXPO_PUBLIC_API_URL;
 
@@ -31,9 +31,14 @@ useEffect (() =>{
 
   return (
     <View style={styles.container}>
+      <Image source={{uri:'https://res.cloudinary.com/dv7ai6yrb/image/upload/v1750831554/quotes_cerqdg.png'}} style={{height:40, width:40}}></Image>
       <Card containerStyle={styles.card}>
+        
         <View style={styles.quote}>
-        <Text>{quotesData?.[0]?.content}</Text>
+        <Text h4 >{quotesData?.[0]?.content}</Text>
+        </View>
+
+        <View style={styles.author}>
         <Text>- {quotesData?.[0]?.author}</Text>
         </View>
       </Card>
@@ -57,5 +62,12 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center'
   },
+  author: {
+    flex:1,
+    marginTop: 8,
+    justifyContent:'center',
+    alignItems:'center'
+  }
+
 
 })
